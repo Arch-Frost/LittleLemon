@@ -7,6 +7,11 @@ import MenuItems from './screens/MenuItems';
 import WelcomeInfo from './screens/WelcomeInfo';
 import SectionListMenuItems from './screens/SectionListMenuItems';
 import FeedbackForm from './screens/FeedbackForm';
+import PressableMenuScreen from './screens/PressableMenuScreen';
+import ImageWelcome from './screens/ImageWelcome';
+import LogoImageWelcome from './screens/LogoImageWelcome';
+import ColorThemes from './screens/ColorThemes';
+import WindowDimensions from './screens/WindowDimensions';
 
 export default function App() {
   return (
@@ -15,12 +20,17 @@ export default function App() {
       flex: 1,
       backgroundColor: '#495E57'
     }}>
-      <LittleLemonHeader />
+      {/* <LittleLemonHeader /> */}
       {/* <WelcomeInfo /> */}
-      {/* <WelcomeScreen /> */}
       {/* <MenuItems /> */}
       {/* <SectionListMenuItems /> */}
-      <FeedbackForm />
+      {/* <FeedbackForm /> */}
+      {/* <PressableMenuScreen /> */}
+      {/* <ImageWelcome /> */}
+      {/* <LogoImageWelcome /> */}
+      {/* <ColorThemes /> */}
+      <WindowDimensions />
+      
     </View>
 
     {/* <View>
@@ -28,7 +38,7 @@ export default function App() {
     </View> */}
 
     {/* <View style={{
-      backgroundColor: '#495E57'
+      backgroundColor: '#333333'
     }}>
       <LittleLemonFooter />
     </View> */}

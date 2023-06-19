@@ -39,6 +39,7 @@ export default function FeedbackForm() {
                 onChangeText={onChangePhoneNumber}
                 placeholder='Phone Number'
                 keyboardType='phone-pad'
+                maxLength={11}
                 style={styles.input}
                 />
                 <TextInput 
