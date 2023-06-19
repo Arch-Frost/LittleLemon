@@ -1,48 +1,49 @@
-import { StyleSheet, Text, View } from 'react-native';
-
-// Import a local component
+import * as React from 'react'
+import { View, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeScreen from './screens/WelcomeScreen'
+import LoginScreen from './screens/LoginScreen';
+import SectionListMenuItems from './screens/SectionListMenuItems';
 import LittleLemonHeader from './components/LittleLemonHeader';
 import LittleLemonFooter from './components/LittleLemonFooter';
-import MenuItems from './screens/MenuItems';
-import WelcomeInfo from './screens/WelcomeInfo';
-import SectionListMenuItems from './screens/SectionListMenuItems';
-import FeedbackForm from './screens/FeedbackForm';
-import PressableMenuScreen from './screens/PressableMenuScreen';
-import ImageWelcome from './screens/ImageWelcome';
-import LogoImageWelcome from './screens/LogoImageWelcome';
-import ColorThemes from './screens/ColorThemes';
-import WindowDimensions from './screens/WindowDimensions';
+import { TextInput } from 'react-native-web';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <>
-    <View style={{
-      flex: 1,
-      backgroundColor: '#495E57'
-    }}>
-      {/* <LittleLemonHeader /> */}
-      {/* <WelcomeInfo /> */}
-      {/* <MenuItems /> */}
-      {/* <SectionListMenuItems /> */}
-      {/* <FeedbackForm /> */}
-      {/* <PressableMenuScreen /> */}
-      {/* <ImageWelcome /> */}
-      {/* <LogoImageWelcome /> */}
-      {/* <ColorThemes /> */}
-      <WindowDimensions />
-      
+
+  <NavigationContainer>
+    <View style={styles.container}>
+      <LittleLemonHeader />
+      <Stack.Navigator 
+      initialRouteName='Login' 
+      screenOptions={
+        {headerStyle: {backgroundColor: '#333333'},
+        headerTintColor: '#fff',
+        headerTitleStyle: {fontWeight: 'bold'}}}>
+        <Stack.Screen name='Welcome' component={WelcomeScreen} options={{title: 'Home'}}/>
+        <Stack.Screen name='Login' component={LoginScreen} />
+        <Stack.Screen name='Menu' component={SectionListMenuItems} />
+      </Stack.Navigator>
     </View>
 
-    {/* <View>
-      <MenuItems />
-    </View> */}
-
-    {/* <View style={{
-      backgroundColor: '#333333'
-    }}>
+    <View style={styles.footerContainer}>
       <LittleLemonFooter />
-    </View> */}
-
-    </>
-  );
+    </View>
+  </NavigationContainer>
+  )
 }
+
+export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#333333',
+  },
+  footerContainer: {
+    backgroundColor: '#333333',
+  }
+})

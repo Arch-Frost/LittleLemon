@@ -6,7 +6,7 @@ const infoText = 'Little Lemon is a charming neighborhood bistro that serves sim
 
 export default function WelcomeInfo() {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 , backgroundColor: '##495E57'}}>
         <ScrollView>
             <Text   
                 style={{
