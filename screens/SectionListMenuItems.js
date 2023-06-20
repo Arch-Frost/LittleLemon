@@ -92,7 +92,7 @@ const menuStyles = StyleSheet.create({
     fontSize: 30,
     flexWrap: "wrap",
     textAlign: "center",
-  },
+  },  
   separator: {
     borderBottomWidth: 1,
     borderColor: "#EDEFEE",
