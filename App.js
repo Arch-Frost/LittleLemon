@@ -1,10 +1,11 @@
-import * as React from 'react'
-import AppWithTabNavigation from './AppWithTabNavigation'
-import AppWithStackNavigation from './AppWithStackNavigation'
-// import AppWithDrawerNavigation from './AppWithDrawerNavigation'
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./navigators/RootNavigator";
 
+// App.js is already setup by wrapping NavigationContainer around Root Navigator
 export default function App() {
-    return (
-        <AppWithStackNavigation />
-    )
+  return (
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
+  );
 }

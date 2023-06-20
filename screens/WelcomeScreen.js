@@ -1,75 +1,55 @@
-import { ScrollView, View, Text, StyleSheet, Image, Pressable } from 'react-native';
+import * as React from 'react';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 
-export default function WelcomeScreen( {navigation}) {
+const WelcomeScreen = ({ navigation }) => {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.headerWrapper}>
-        <Image
-          style={styles.image}
-          source={require('../img/littleLemonLogo.png')}
-          resizeMode="cover"
-          accessible={true}
-          accessibilityLabel={'Little Lemon Logo'}
-        />
+    <>
+    <View style={styles.container}>
+      <Image source={require('../assets/little-lemon-logo.png')} style={styles.image} />
+      <Text style={styles.text}>
+        Little Lemon, your local {'\n'}
+        Mediterranian Bistro</Text>
+    </View>
 
-        <Text style={styles.headerText}>Little Lemon</Text>
-      </View>
-      <Text style={styles.regularText}>
-        Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear your experience with us!
-      </Text>
-
-      <Pressable>
-        <Text style={styles.buttonText} onPress={() => navigation.navigate('Menu')}>View Menu</Text>
+    <View style={{backgroundColor: '#fff'}}>
+      <Pressable onPress={() => {navigation.navigate("Subscribe")}}>
+        <Text style={styles.button}>Newsletter</Text>
       </Pressable>
-
-      
-    </ScrollView>
+    </View>
+    </>
   );
-}
+};
+
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#333333"
+    backgroundColor: '#fff',
   },
-  headerWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    margin: 10,
-  },
-  headerText: {
-    paddingRight: 10,
-    paddingLeft: 20,
-    paddingTop: 30,
-    paddingBottom: 10,
-    fontSize: 30,
-    color: '#EDEFEE',
+  button: {
+    backgroundColor: '#495E57',
+    color: 'white',
+    fontSize: 20,
     textAlign: 'center',
-  },
-  regularText: {
-    fontSize: 24,
-    padding: 20,
-    marginVertical: 8,
-    color: '#EDEFEE',
-    textAlign: 'center',
-  },
-  image: {
-    width: 100,
-    height: 100,
-    borderRadius: 20,
-  },
-  buttonText: {
-    fontSize: 24,
-    color: '#EDEFEE',
-    textAlign: 'center',
-    borderWidth: 1,
-    borderColor: '#EDEFEE', 
+    padding: 15,
     borderRadius: 10,
-    padding: 10,
-    margin: 10,
+    margin: 15,
+    marginBottom: 20,
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 60,
+    
+  },
+  image: { 
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
+    marginTop: 100, 
+    resizeMode: 'contain',
   }
-});
-
-
+})
